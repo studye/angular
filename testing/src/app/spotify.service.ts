@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import 'rxjs';
 
 @Injectable()
 export class SpotifyService {
@@ -9,12 +10,12 @@ export class SpotifyService {
   constructor(private http: Http) {
   }
 
-  query(URL: string, params?: Array<string>): Observable<any[]> {
+  query(URL: string, params?: Array<string>): Observable<any> {
     let queryURL: string = `${SpotifyService.BASE_URL}${URL}`;
     if (params) {
       queryURL = `${queryURL}?${params.join('&')}`;
     }
-
+    console.info(queryURL);
     return this.http.request(queryURL).map((res: any) => res.json());
   }
 

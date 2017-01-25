@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
   }
 
   submit(query: string): void {
+    console.log("in submit", query);
     this.router.navigate(['search'], { queryParams: { query: query } })
       .then(_ => this.search() );
   }

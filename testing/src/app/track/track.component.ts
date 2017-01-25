@@ -5,8 +5,7 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-track',
-  templateUrl: './track.component.html',
-  styleUrls: ['./track.component.css']
+  templateUrl: './track.component.html'
 })
 export class TrackComponent implements OnInit {
   id: string;
