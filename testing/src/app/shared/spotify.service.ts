@@ -15,9 +15,8 @@ export class SpotifyService {
     if (params) {
       queryURL = `${queryURL}?${params.join('&')}`;
     }
-    console.info(queryURL);
     return this.http.request(queryURL).map((res: any) => res.json());
-  }
+  } 
 
   search(query: string, type: string): Observable<any[]> {
     return this.query(`/search`, [

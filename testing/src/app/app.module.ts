@@ -10,15 +10,8 @@ import { AlbumComponent } from './album/album.component';
 import { ArtistComponent } from './artist/artist.component';
 import { SearchComponent } from './search/search.component';
 import { TrackComponent } from './track/track.component';
-import { SpotifyService } from './spotify.service';
-
-const routes: Routes = [
-  { path: '', redirectTo: 'search', pathMatch: 'full' },
-  { path: 'search', component: SearchComponent },
-  { path: 'artists/:id', component: ArtistComponent },
-  { path: 'tracks/:id', component: TrackComponent },
-  { path: 'albums/:id', component: AlbumComponent },
-];
+import { SpotifyService } from './shared/spotify.service';
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
