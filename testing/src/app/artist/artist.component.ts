@@ -17,10 +17,15 @@ export class ArtistComponent implements OnInit {
       private location: Location) {
     
     // 클래스가 생성되자 마자 id를 받음.
-    route.params.subscribe(params => { this.id = params['id']; });
+    // console.log("create construct");
+    route.params.subscribe(params => { 
+      this.id = params['id']; 
+    });
   }
 
   ngOnInit(): void {
+    // ngOnInit 발생시 테스트
+    // console.log("ngOnInit");
     this.spotify
       .getArtist(this.id) // Observable 형태
       .subscribe((res: any) => this.renderArtist(res));
